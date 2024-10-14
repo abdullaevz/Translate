@@ -1,0 +1,287 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background: linear-gradient(135deg, #e09, #f8b); */
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header (Başlıq) stili */
+header {
+    justify-content:space-between ;
+    background-color: #f17c4a;
+    color: white;
+    /* padding: 15px 0; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #f17c4a;
+}
+
+.logo {
+    border-radius: 50%;
+    height: 70px; /* Loqonun hündürlüyünü təyin edin */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 40px;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Container Styling */
+.container {
+    background-color: white;
+    margin: 100px;
+    margin-left: 250px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #f17c4a7f;
+    max-width: 1000px; /* Daha geniş konteyner */
+    width: 100%;
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+/* Textareas Side-by-Side */
+.textareas {
+    display: flex;
+    justify-content: space-between; /* Sahələri yanaşı yerleştirir */
+    gap: 20px; /* Aradakı boşluğu təyin edir */
+}
+
+/* Textarea Containers */
+.textarea-container {
+    flex: 1; /* Hər iki sahə eyni genişlikdə olacaq */
+    display: flex;
+    flex-direction: column; /* Elementləri şaquli olaraq düzür */
+    gap: 10px; /* Elementlər arasındakı boşluq */
+}
+
+/* Select Styling */
+select {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+/* Textarea Styling */
+textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    height: 200px; /* Hündürlük eynidir */
+    width: 100%;
+    resize: none;
+}
+
+/* Focus State for Textareas */
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(229, 145, 85, 0.3);
+}
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f17c4a;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #da6533;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(106, 103, 206, 0.2);
+}
+
+/* Error Message Styling */
+.error {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .textareas {
+        flex-direction: column; /* Kiçik ekranlarda sahələr alt-alta düzüləcək */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+footer ul li {
+    display: inline;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+.footer1 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #888;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.step {
+    text-align: center;
+    width: 200px;
+}
+
+.step-number {
+    background-color: #f17c4a;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sözləri sil</title>
+    <link rel="stylesheet" href="/delete.css"> 
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img src="/photoo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/">Translation page</a></li>
+                    <li><a href="/words">Translated words</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Delete the words</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th> Words</th>
+                    <th>Translation</th>
+                    <th>Delete button</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (words.length > 0) { %>
+                    <% words.forEach(word => { %>
+                        <tr>
+                            <td><%= word.soz %></td>
+                            <td><%= word.tercumesi %></td>
+                            <td>
+                                <button class="styled-button" onclick="deleteWord('<%= word._id %>')">Delete</button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">Heç bir söz tapılmadı.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <p id="result"></p>
+
+    <div class="footers">
+        <p>© 2024 Lüğət Tətbiqi</p>
+    </div>
+
+    <script>
+        // Söz silmə funksiyası
+        async function deleteWord(wordId) {
+            try {
+                const response = await fetch(`/words/${wordId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('result').innerText = `Söz silindi: ${result.word.soz}`;
+                    window.location.reload(); // Səhifəni yenidən yükləyir ki, siyahı yenilənsin
+                } else {
+                    document.getElementById('result').innerText = `Xəta: ${result.message}`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerText = `Xəta baş verdi: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words List</title>
+    <link rel="stylesheet" href="/note.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img src="/photoo.png" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/">Translation page</a></li>
+                    <li><a href="/delete">Delete words</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    <h1>My Dictionary</h1>
+    <!-- Lüğət cədvəli -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Translation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% words.forEach(word => { %>
+                    <tr>
+                        <td><%= word.soz %></td>
+                        <td><%= word.tercumesi %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="center-container">
+        <button class="styled-button">
+            <a href="/" class="button-link">Add new word</a>
+        </button>
+    </div>
+    <div class="footers">
+        
+        <p class="subtitle">You should pay attention to:</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>Words (Sentences) are sorted in the order you entered them.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>The translation of each word you input is located in front of it</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>The words you translate are not divided according to the languages ​​they are translated into.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
